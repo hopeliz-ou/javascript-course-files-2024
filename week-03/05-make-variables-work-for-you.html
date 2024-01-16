@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        List of things:
+        <ul id="this-id-name-is-a-bit-long-dont-you-think">
+            <li>First item</li>
+        </ul>
+    </div>
+
+    <script>
+
+        let longList = document.getElementById("this-id-name-is-a-bit-long-dont-you-think");
+
+        longList.innerHTML += "<li>List item 2</li>";
+        longList.innerHTML += "<li>yet, another list item</li>";
+        longList.innerHTML += "<li>And again, another list item 2</li>";
+    
+    </script>
+    
+</body>
+</html>
