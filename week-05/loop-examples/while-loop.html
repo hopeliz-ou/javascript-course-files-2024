@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content"></div>
+    
+    <script>
+        let count = 0;
+
+        while (count < 5) {
+            
+            document.getElementById("content").innerHTML += count;
+            document.getElementById("content").innerHTML += "<br>";
+            
+            count++;
+        }
+    </script>
+</body>
+</html>

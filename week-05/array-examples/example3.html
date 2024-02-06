@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="content"></div>
+
+    <script>
+
+        let items = [
+            "Apples",
+            "Bananas",
+            "Cherries",
+            "Dates",
+            "Peaches"
+        ];
+        
+        document.getElementById("content").innerHTML = "My list of items:<br><br>";
+
+        for (let thing in items) {
+            document.getElementById("content").innerHTML += items[thing] + "<br>";
+        }
+
+    </script>
+    
+</body>
+</html>
