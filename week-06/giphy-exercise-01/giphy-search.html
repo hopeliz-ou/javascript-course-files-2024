@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy Search Exercise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="container">
+        <h2>Search Results:</h2>
+        <div id="content"></div>
+    </div>
+    
+    <script>
+        let endpoint = "http://api.giphy.com/v1/gifs/search?api_key=your-api-key&q=computers";
+
+        let request = new XMLHttpRequest();
+
+        request.open('GET', endpoint);
+
+        request.onload = function() {
+
+            let response = request.response;
+            
+            let parsedData = JSON.parse(response);
+
+            for (let image in parsedData.data) {
+                document.getElementById("content").innerHTML += `
+                    <div class="data">
+                        <img src="${parsedData.data[image].images.original.url}" alt="">
+                    </div>
+                `;
+            }
+            
+            // View in Console (optional)
+            console.log(parsedData);
+            
+            // Add code below this line to work with the parsedData object
+
+        }
+
+        try {
+            request.send();
+        } 
+        catch(err) {
+            console.log("Error: " + err.message);
+        }
+    </script>
+</body>
+</html>
