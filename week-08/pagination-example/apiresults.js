@@ -29,7 +29,7 @@ function searchPexels(searchWord, orientation) {
     request.open('GET', endpoint);
 
     // Below is a request header with the key ("Authorization") and value (your_api_key) provided by the API
-    request.setRequestHeader("Authorization", "y03lquRkv90SEk7BKnMvpYYGUporyABfXZQvZfOe2uVvyMX8A1Srqq9v");
+    request.setRequestHeader("Authorization", "your_api_key");
 
     // Begin function to run code when request is made
     request.onload = function() {
