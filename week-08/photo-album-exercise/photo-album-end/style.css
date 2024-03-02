@@ -46,7 +46,7 @@ h2 {
 
 #photo-highlight img {
     max-width: 700px;
-    max-height: 660px;
+    max-height: 500px;
 }
 
 #photo-info {
@@ -61,8 +61,6 @@ h2 {
 
 #carousel-container {
     display: flex;
-    position: absolute;
-    bottom: 23px;
     align-items: center;
     background-color: white;
     width: 100%;
@@ -101,7 +99,7 @@ h2 {
 }
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     display: flex;
     background-color: white;

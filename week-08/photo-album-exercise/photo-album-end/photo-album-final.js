@@ -31,8 +31,6 @@ function updateThumbnails(startID) {
     else {
         document.getElementById("rt-arrow").style.visibility = "visible";
     }
-
-    console.log(currentStart + thumbnailsPerPage - 1);
 }
 
 function updatePhotoHighlight(id) {
@@ -53,6 +51,6 @@ function updatePhotoHighlight(id) {
     }
 }
 
-updateThumbnails(0);
-
 updatePhotoHighlight(0);
+
+updateThumbnails(0);
