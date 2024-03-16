@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChartJS Example</title>
+</head>
+<body>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+
+        const ctx = document.getElementById('myChart');
+
+        let title = "";
+        let years = [];
+        let temps = [];
+
+        // Get Data with Fetch
+        async function getData() {
+
+            // Fetch file
+            const response = await fetch("temperature.csv");
+
+            // Parse data
+            const data = await response.text();
+
+            //View in Console
+            console.log(data);
+
+            // Split into Rows
+            let rows = data.split("\n");
+            title = rows[0];
+
+            rows.splice(0, 2);
+            rows.pop();
+
+            console.log(rows);
+
+            // Split into columns/cells
+            for (let x in rows) {
+                let columns = rows[x].split(",");
+
+                years.push(columns[0]);
+                temps.push(columns[1]);
+            }
+
+            console.log(years);
+            console.log(temps);
+
+            makeChart();
+        }
+
+        getData();
+
+        function makeChart() {
+            new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                label: title,
+                data: temps,
+                borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                y: {
+                    beginAtZero: true
+                }
+                }
+            }
+            });
+        }
+    </script>
+    
+</body>
+</html>
