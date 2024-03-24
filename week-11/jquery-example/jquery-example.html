@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Exercise 1 - Menu</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #menu-header {
+            cursor: pointer;
+            background-color: darkgray;
+            margin: 0 auto;
+            padding: 10px 0;
+            text-align: center;
+            max-width: 300px;
+        }
+
+        #menu-container {
+            margin: 0 auto;
+            text-align: center;
+            max-width: 300px;
+        }
+
+        li {
+            cursor: pointer;
+            background-color: #eee;
+            margin: 0 auto;
+            border-bottom: 1px solid #ccc;
+            list-style: none;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        li:hover {
+            background-color: #ddd;
+        }
+
+        #menu-container li:last-child {
+            border-radius: 0 0 10px 10px;
+        }
+
+        #menu-container li a {
+            display: block;
+            color: black;
+            padding: 10px 5px;
+            text-decoration: none;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu-header">Menu</div>
+    <div id="menu-container">
+        <ul>
+            <li><a href="link1.html">Link 1</a></li>
+            <li><a href="link2.html">Link 2</a></li>
+            <li><a href="link3.html">Link 3</a></li>
+            <li><a href="link4.html">Link 4</a></li>
+            <li><a href="link5.html">Link 5</a></li>
+        </ul>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#menu-container").hide();
+
+            $("#menu-header").click(function () {
+                $("#menu-container").slideToggle(800);
+            });
+
+        });
+    </script>
+    
+</body>
+</html>
